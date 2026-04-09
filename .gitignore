@@ -1,0 +1,9 @@
+## Dependencies
+node_modules/
+
+## Firebase
+backend/src/config/serviceAccountKey.json
+serviceAccountKey.json
+
+## Env file
+.env
