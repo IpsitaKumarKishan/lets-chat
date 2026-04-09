@@ -85,12 +85,12 @@ npm start
 ## 📁 Project Structure
 
 lets-chat/
- ┣ client/        # React frontend
- ┣ server/        # Node + Express backend
- ┣ models/        # MongoDB schemas
- ┣ routes/        # API routes
- ┣ sockets/       # Socket.IO logic
- ┗ config/        # Configuration files
+ ┣ client/        # React frontend 
+ ┣ server/        # Node + Express backend 
+ ┣ models/        # MongoDB schemas 
+ ┣ routes/        # API routes 
+ ┣ sockets/       # Socket.IO logic 
+ ┗ config/        # Configuration files 
 
 ---
 
