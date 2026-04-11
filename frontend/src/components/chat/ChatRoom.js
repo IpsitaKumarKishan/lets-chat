@@ -14,7 +14,7 @@ export default function ChatRoom({ currentChat, currentUser, socket, changeChat 
   useEffect(() => {
     const fetchData = async () => {
       const res = await getMessagesOfChatRoom(currentChat._id);
-      setMessages(res);
+      setMessages(Array.isArray(res) ? res : (res || []));
     };
 
     fetchData();
@@ -31,7 +31,7 @@ export default function ChatRoom({ currentChat, currentUser, socket, changeChat 
       const chatContactId = currentChat.members.find((member) => member !== currentUser.uid);
       if (data.senderId === chatContactId) {
         setMessages((prev) => [
-          ...prev,
+          ...(Array.isArray(prev) ? prev : []),
           {
             sender: data.senderId,
             message: data.message,
@@ -62,7 +62,7 @@ export default function ChatRoom({ currentChat, currentUser, socket, changeChat 
       message: message,
     };
     const res = await sendMessage(messageBody);
-    setMessages((prev) => [...prev, res]);
+    setMessages((prev) => [...(Array.isArray(prev) ? prev : []), res]);
   };
 
   return (
@@ -83,7 +83,7 @@ export default function ChatRoom({ currentChat, currentUser, socket, changeChat 
 
         <div className="relative w-full p-4 sm:p-6 overflow-y-auto flex-1 scrollbar-thin">
           <ul className="space-y-4">
-            {messages.map((message, index) => (
+            {(messages || []).map((message, index) => (
               <div key={index} ref={scrollRef}>
                 <Message message={message} self={currentUser.uid} />
               </div>
