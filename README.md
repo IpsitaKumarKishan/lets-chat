@@ -1,3 +1,5 @@
+#Live demo : https://lnkd.in/g9HAWYyb
+
 # 💬 Lets Chat
 
 Lets Chat is a real-time chat application built using the MERN stack with Socket.IO and Firebase. It enables users to communicate instantly with features like real-time messaging, user authentication, and live status updates.
